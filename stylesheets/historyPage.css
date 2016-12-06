@@ -1,0 +1,98 @@
+body{
+	text-align:center;
+}
+.historyPage{
+	width:480px;margin:0 auto;background: #FFF;text-align:left;
+}
+/*顶部导航条*/
+.header{
+	background-color:#1E90FF;
+	width:480px;
+	box-shadow:1px 2px 5px rgba(0,0,0,0.26);
+	position:fixed;	
+	top:0;
+	left:auto;
+	right:auto;
+}
+	
+
+.header .header_content{
+	test-align:left;
+	font-size:large;
+	font-family:微软雅黑;
+	padding:15px;           		/*内边距*/
+	color:aliceblue;
+
+}
+
+#header_scan{
+	float:right;
+	vertical-align:middle;
+	border:none;
+	width:30px;
+	height:30px;
+}
+
+/*页面主体内容*/
+#main_startpower{
+    margin-bottom: 130px;
+	margin-top:130px;
+    text-align: center;
+
+}
+#main_startpower_myimage{
+	width: 300px;
+}
+
+#index_main_content_cost{
+	letter-spacing:1px;
+}
+
+/*底部导航条*/
+#bottom{
+	background-color:#FFFFFF;
+	box-shadow:1px 2px 5px rgba(0,0,0,0.26);	/*向框添加一个个阴影*/
+    width:480px;
+    margin:0 auto;
+    position:fixed;					/*固定导航栏*/
+    bottom:0;					/*置于底部*/
+    text-align:center;
+	left:auto; 
+    right:auto;
+
+}
+
+#bottom ul
+{
+	list-style-type:none;
+	margin:0;
+	padding:15px;
+	overflow:hidden;
+
+}
+
+#bottom li
+{
+	height:30px;
+	width:33.333%;
+	float:left;
+}
+
+#bottom a:link,a:visited
+{
+	display:block;
+	font-weight:bold;
+	color:#000000;
+	background-color:#FFFFFF;
+	text-align:center;
+	padding:15px;
+	text-decoration:none;
+	text-transform:uppercase;
+	border-top:3px solid #C0C0C0;/*设置银色上边框*/
+}
+
+#bottom a:hover,a:active
+{
+	border-top:3px solid #1E90FF;/*设置蓝色上边框*/
+}
+
