@@ -1,19 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<meta http-equiv="Cache-Control" content="no-transform" /> 
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0.5, maximum-scale=2.0,user-scalable=yes" /> 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<style type="text/css">
-    html,body{margin:0;padding:0;}
-    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
-    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
-</style>
-
-<link rel="stylesheet" type="text/css" href="smartPowerPlug2.css">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-transform" /> 
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+	<title>æ™ºèƒ½æ’åº§</title>
+    <link rel="stylesheet" type="text/css" href='css/smartPowerPlug2.css'>
+</head>
 
 <script type="text/javascript">
 
@@ -23,57 +16,74 @@ function changeImage()
 
 	if (element.src.match("startpower"))
 	{
-		element.src="cost.png";
+		element.src="http://r.photo.store.qq.com/psb?/V13oOavi4OWdbk/FbWEaaesDm3Lu.gmEh5kjIS9LB6BwxeehHbGY2*XH3A!/r/dG0BAAAAAAAA";
 
-		var x=document.getElementById("index_main_toclip");  //²éÕÒÔªËØ
-		x.innerHTML="µ¥»÷°´Å¥½áÊø³äµç";    //¸Ä±äÄÚÈİ
+		var x=document.getElementById("index_main_toclip");  //æŸ¥æ‰¾å…ƒç´ 
+		x.innerHTML="å•å‡»æŒ‰é’®ç»“æŸå……ç”µ";    //æ”¹å˜å†…å®¹
 		
-		var y=document.getElementById("index_main_content_cost");  //²éÕÒÔªËØ
-		y.innerHTML="×Ü·ÑÓÃ£º 6.10 Ôª";    //¸Ä±äÄÚÈİ	
+		var y=document.getElementById("index_main_content_cost");  //æŸ¥æ‰¾å…ƒç´ 
+		y.innerHTML="æ€»è´¹ç”¨ï¼š 6.10 å…ƒ";    //æ”¹å˜å†…å®¹	
 	
 
 	}
 	else
 	{
-		element.src="endpower.png";
+		element.src="http://r.photo.store.qq.com/psb?/V13oOavi4OWdbk/tz3TRe*FcO24xxvYvSGygjt6uPL2L9koCl2ojij*6TY!/r/dDwBAAAAAAAA";
 
-		var parent=document.getElementById("main_startpower"); //²éÕÒ¸¸ÔªËØ
+		var parent=document.getElementById("main_startpower"); //æŸ¥æ‰¾çˆ¶å…ƒç´ 
 		x=document.getElementById("index_main_toclip");		
-		parent.removeChild(x);					//ÒÆ³ıÔªËØ
+		parent.removeChild(x);					//ç§»é™¤å…ƒç´ 
 
-		y=document.getElementById("index_main_content_cost")  //²éÕÒÔªËØ		
-		y.innerHTML="×ÜµçÁ¿£º10.00 KWh<br/><br/>×Ü·ÑÓÃ£º 6.10 Ôª"    //¸Ä±äÄÚÈİ
+		y=document.getElementById("index_main_content_cost")  //æŸ¥æ‰¾å…ƒç´ 		
+		y.innerHTML="æ€»ç”µé‡ï¼š10.00 KWh<br/><br/>æ€»è´¹ç”¨ï¼š 6.10 å…ƒ"    //æ”¹å˜å†…å®¹
 		
 	}
 }
+
+function initiate(){
+  var get = document.getElementById('getlocation');
+  get.addEventListener('click', getlocation);
+}
+function getlocation(){
+  navigator.geolocation.getCurrentPosition(showinfo, showerror);
+}
+function showinfo(position){
+  var location = document.getElementById('location');
+  var mapurl = 'http://maps.google.com/maps/api/staticmap?center=' + position.coords.latitude + ',' + position.coords.longitude + '&zoom=12&size=400x400&sensor=false&markers=' + position.coords.latitude + ',' + position.coords.longitude;
+  location.innerHTML = '<img src="' + mapurl + '">';
+}
+function showerror(error){
+  alert('Error: ' + error.code + ' ' + error.message);
+}
+addEventListener('load', initiate);
+
 </script>
-</head>
 
 <body>
-	<div class="index">
+    <div class="index">
 		<div class="header">
 			<div class="header_content">
-				ÖÇÄÜ²å×ù              
-                <img id="header_scan" src="scan.png">
+				æ™ºèƒ½æ’åº§              
+                <img id="header_scan" src="http://r.photo.store.qq.com/psb?/V13oOavi4OWdbk/WyaOEe6*pfIypt4nb0*M7xPkI*ZoBLLnVPOTje*poww!/r/dIUBAAAAAAAA">
             </div>
-</div> 
-       <div class="location">
-        <p>&nbsp;</p> 
-		
+    </div> 
+       <div id="location">
+            <button id="getlocation">è·å–ä½ç½®</button> 
+		</div>
         <div class="main">
 			<div id="main_startpower">
   			<form id="form1" name="form1" method="post" action="data.html">
-			<img id="main_startpower_myimage" onClick="changeImage()" src="startpower.png">
+			<img id="main_startpower_myimage" onClick="changeImage()" src="http://r.photo.store.qq.com/psb?/V13oOavi4OWdbk/0FH9tO3Gz9tEAqsHF*7s49JmoWOqriW0dgzg9WHxCuc!/r/dIUBAAAAAAAA">
   			</form>
-			<p id="index_main_toclip" style="font-size:20px;color:#C0C0C0">µ¥»÷°´Å¥¿ªÊ¼³äµç</p>	
+			<p id="index_main_toclip" style="font-size:20px;color:#C0C0C0">å•å‡»æŒ‰é’®å¼€å§‹å……ç”µ</p>	
 			<p id="index_main_content_cost" style="font-size:25px;color:#1E90FF"></p>
 			</div>
 		</div>
 		<div id="bottom"> 
 			<ul>
-				<li id="nearbyPlug"><a href="nearbyPlugPage.html">¸½½ü²å×ù</a></li>
-				<li id="power"><a href="index.html" style="border-top:3px solid #1E90FF">µçÁ¿²éÑ¯</a></li>
-				<li id="history"><a href="historyPage.html">ÀúÊ·¼ÇÂ¼</a></li>
+				<li id="nearbyPlug"><a href="nearbyPlugPage.html">é™„è¿‘æ’åº§</a></li>
+				<li id="power"><a href="index.html" style="border-top:3px solid #1E90FF">ç”µé‡æŸ¥è¯¢</a></li>
+				<li id="history"><a href="historyPage.html">å†å²è®°å½•</a></li>
 			</ul>	
 		</div>
 </div>
